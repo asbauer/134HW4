@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto+Mono:wght@300&display=swap');
+
+
+:root{
+--main-color: rgb(10, 101, 150);
+--header-color: rgb(33, 9, 5);
+--text-color: rgb(216, 213, 186);
+
+
+--welcome-border: brown ;
+--custom-font:'Roboto Mono',monospace ; 
+--alternate-main-color : rgb(179, 46, 19) ;
+--alternate-header-color : purple ; 
+--alternate-text-color : rgb(9, 9, 9) ; 
+}
+

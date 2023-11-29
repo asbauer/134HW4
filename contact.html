@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Contact Me</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Learn about the best way to get in touch with me">
+        <meta name="keywords" content="Adam,Bauer,computer,engineer,travel,UCSD">
+        <link rel="stylesheet" href="style.css" media="screen" type="text/css">
+        <meta name="viewport" content="width=device-width">
+        
+        
+        <script src="scriptCode.js"></script>
+
+
+        <style>
+
+            button{
+                transition: transform 0.5s ease-in-out;
+
+            }
+
+            button:hover{
+                transform:scale(1.1);
+            }
+
+            fieldset{
+                width: 50vw;
+                border: 2px  solid black;
+                text-align: center;
+            }
+            legend{
+                text-align: center;
+            }
+
+            input:focus, select:focus, input:hover, textarea:hover,select:hover{
+                background-color: rgb(99, 123, 168);
+                color: rgb(237, 233, 233);
+                border: 2px black solid;
+                transform:scale(1.1);
+
+               
+            }
+
+            input,select{
+            border: 2px black solid;
+            transition: transform 0.5s ease-in-out;
+
+            }
+
+
+            textarea{
+                border: 2px black solid;
+                transition: background-color 0.5s ;
+                transition: transform 0.5s ease-in-out;
+
+            }
+
+            textarea:hover::placeholder, input:hover::placeholder, textarea:focus, textarea:focus::placeholder{
+                background-color: rgb(99, 123, 168);
+                 color: rgb(237, 233, 233);
+                 
+               
+            }
+
+           
+            fieldset{
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            
+            button[type="reset"], input[type="reset"] {
+                box-sizing: border-box;
+                margin:0;
+                width: 35% ;
+                flex: 100%;
+            }
+            button[type="submit"],input[type="submit"] {
+             box-sizing: border-box;
+                margin:0;
+              width: 35% ;
+              flex: 100%;
+            }
+
+            div {
+                display: flex;
+                align-content: center;
+            }
+
+            input[type="input"], input[type="email"] {
+               width: 50%;
+               margin: auto;
+            }
+
+            fieldset > input[type="input"], fieldset > input[type="email"] {
+               display: flex;
+               align-content: center;
+            }
+
+            ::placeholder {
+                text-align: center;
+            }
+
+            
+            [type="text"]:valid, [type="email"]:user-valid {
+                background-color: green;
+                color: white;
+            }
+           /*
+            :user-invalid{
+                background-color: rgb(129, 4, 4);
+                color: white;
+            
+            }
+             input:hover:invalid, input:focus{
+                background-color: rgb(255, 0, 195);
+                 color: rgb(237, 233, 233); 
+               
+            }
+            
+ input:focus:invalid{
+                background-color: red;
+            }
+            
+            textarea:hover:valid
+            */
+
+            .error-message {
+                background-color: red;
+            color: rgb(9, 0, 0);
+            opacity: 1;
+            transition: opacity 10s ease-in-out;
+            opacity: 0;
+        }
+
+        .error-message.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+
+        .warning-message {
+                background-color: rgb(107, 17, 17);
+            color: rgb(188, 178, 178);
+            opacity: 1;
+            transition: opacity 5s ease-in-out;
+            opacity: 0;
+        }
+
+        .done-message {
+                background-color: rgb(67, 17, 107);
+            color: rgb(188, 178, 178);
+            opacity: 1;
+            transition: opacity 10s ease-in-out;
+            opacity: 0;
+        }
+        
+        
+           
+            [type="text"]:valid, [type="email"]:user-valid, textarea:hover:valid {
+                background-color: green;
+                color: white;
+
+            }
+
+            .InvalidCharacterFlash {
+    
+        animation: flash 1s;
+    
+}
+
+@keyframes flash {
+    0% { background-color: red; }
+    50% { background-color: rgb(222, 135, 167); }
+    100% { background-color: red; }
+   
+   
+}
+
+         
+.switch{
+    position: fixed;
+    top:10px ;
+    right: 10px ;
+    display: inline-block ;
+    height: 34px;
+}
+
+.switch input{
+    display: none;
+
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width:60px ;
+    height: 34px;
+    background-color: rgba(171, 121, 121, 0.673);
+    border-radius:34px ;
+
+}
+
+.slider:before {
+    position:absolute ;
+    content:"" ;
+    height: 26px; 
+    width: 26px;
+    left:4px ;
+    bottom:4px ;
+    background-color: white;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+
+}
+            
+     
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>Let's Connect.</h1>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Me</a>
+                <a href="./portfolio.html">Portfolio</a>
+            </nav>
+        </header>
+
+        <label class="switch">
+            <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+
+        <noscript><p>JavaScript is currently disabled</p></noscript>
+
+       
+
+        
+        <main>
+            
+            <form onsubmit="getFormErrors()"  action="https://httpbin.org/post"   method="POST">
+                <fieldset>
+                    <legend>Contact</legend>
+                   
+                    <label for="visitor-name">Please enter your name</label>
+                    <input type="text" id="visitor-name" name="visitor-name" placeholder="Your name" pattern="^[a-zA-Z\s]+$" required minlength="2" maxlength="25">
+
+                   
+                    <label for="visitor-email">Please enter your email</label>
+
+                    <input type="email" id="visitor-email" name="visitor-email" placeholder="Your email" required minlength="5" maxlength="30">
+
+                    <label for="comments">Enter any comments</label>
+                    <textarea name="comments" id="comments" placeholder="Please leave any comments here." required minlength="1" maxlength="68"></textarea>
+
+                    <div>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit </button>
+                </div>
+                <input id="form-errors"  type="hidden" name="form-errors">
+                <input id="possible_bot" name="possible_bot" type="hidden" value="true">
+                </fieldset>
+            </form>
+
+            <div>
+            <output id="error"></output>
+            <output id="error-info"></output>
+        </div>
+
+        <!--
+        <form id="form-errors" name="form-errors" hidden action="https://httpbin.org/post"   method="POST">
+            
+        </form>
+
+    -->
+
+    <script>
+
+        var form_errors = [] ;
+
+let name = document.getElementById("visitor-name") ;
+name.addEventListener("input",checkName) ;
+
+
+        function checkName(){
+            let name = document.getElementById("visitor-name") ;
+            let nameValidity = name.validity ; 
+            let regexError = false ; 
+            let error = document.getElementById("error") ;
+            let errorInfo = document.getElementById("error-info") ; 
+            let errorObj ; 
+            let errorMessage ;
+            
+            if (nameValidity.patternMismatch) {
+                errorMessage = "Please use only letters" ;
+                name.setCustomValidity("Please use only letters");
+                errorInfo.innerHTML = "Letters only!"
+                regexError = true ; 
+                
+                
+
+
+            }
+            else if (nameValidity.tooShort) {
+                name.setCustomValidity("Too short");
+                errorMessage = "Too short" ;
+
+               // errorInfo.innerHTML = "I need a more descriptive name!" ;
+
+
+
+            }
+            else if (nameValidity.tooLong) {
+                name.setCustomValidity("Too long")
+                errorMessage = "Too long" ;
+
+                //errorInfo.innerHTML = "Thats a bit long for a name" ;
+
+
+            }
+            else if (nameValidity.valueMissing) {
+                name.setCustomValidity("I won't know who you are without a name!")
+                errorMessage = "No name" ;
+
+                //errorInfo.innerHTML = "Please enter your name!"
+
+
+            }
+            else   {
+                regexError = false ; 
+                name.setCustomValidity("");
+               
+            }
+            
+            
+            name.reportValidity() ;
+           
+            let validState = name.checkValidity() ;
+
+            if (validState === false) {
+                errorObj = {errorField: "name" , error: errorMessage, input: name.value} ;
+                form_errors.push(errorObj) ;
+                
+            }
+            
+
+
+            if (regexError == true) {
+                name.style.backgroundColor = "red" ;
+                error.classList.add("error-message") ;
+                errorInfo.classList.add("error-message") ;
+
+                error.innerHTML = "Name Issue" ;
+                
+                name.classList.add("InvalidCharacterFlash") ;
+               
+
+
+
+            }
+            else {
+                name.classList.remove("InvalidCharacterFlash") ;
+                error.classList.remove("error-message") ;
+                errorInfo.classList.remove("error-message") ;
+                name.style.backgroundColor = "" ;
+                error.style.backgroundColor = "" ;
+                error.innerHTML = "" ;
+                errorInfo.innerHTML = "" ;
+                
+
+
+            }
+        }
+
+let email = document.getElementById("visitor-email") ;
+email.addEventListener("input",checkEmail) ;   
+
+
+
+function checkEmail(){
+
+         let typingTimer;
+         clearTimeout(typingTimer);
+
+
+
+            let email = document.getElementById("visitor-email")
+            let emailValidity = email.validity ; 
+            let regexError = false; 
+            let error = document.getElementById("error") ;
+            let errorInfo = document.getElementById("error-info") ; 
+            let validityMessage  ;
+            let errorInfoMessage ; 
+            let errorObj ; 
+           
+
+            if ((emailValidity.typeMismatch || emailValidity.patternMismatch) && email.value.length >= email.getAttribute("maxlength")/3) {
+                validityMessage = "Thats not the format of an email address."
+               // email.setCustomValidity("Doesn't look like thats the format for an email address. ")
+               //errorInfo.innerHTML = "Thats not the format of an email address yet."
+               errorInfo.innerHTML = validityMessage ; 
+                errorInfoMessage = validityMessage ; 
+               regexError = true ; 
+            } 
+            
+            else if (emailValidity.tooShort) {
+                //setTimeout(checkEmail,10000);
+                validityMessage = "Thats too short to be an email!"
+                errorInfoMessage = validityMessage ; 
+
+                //email.setCustomValidity("Thats too short to be an email!") ;
+               // errorInfo.innerHTML = "Too short to be an email!."
+
+               /*
+               setTimeout(function () {
+email.setCustomValidity("Doesn't look like that's the format for an email address.");
+regexError = true;
+email.reportValidity() ;
+}, 3000);
+*/
+            }
+
+            else if (emailValidity.tooLong) {
+                validityMessage = "Thats too long to be an email!"
+                errorInfoMessage = validityMessage ; 
+
+               // email.setCustomValidity("That seems a bit long to be an email address") ;
+                //errorInfo.innerHTML = "Thats a really really long email address."
+
+
+            }
+            else if (emailValidity.valueMissing) {
+                validityMessage = "Looks like you forgot to enter your email."
+                
+                //email.setCustomValidity("Looks like you forgot to enter your email.")  ;
+               // errorInfo.innerHTML = "I think you forgot your email!"
+
+
+            }
+
+            else   {
+                validityMessage = "" ;
+                //email.setCustomValidity("");
+                regexError = false ; 
+            }
+
+            if (validityMessage){
+            email.setCustomValidity(validityMessage) ;
+            email.reportValidity() ;
+            errorInfoMessage = validityMessage ; 
+            errorObj = {errorField: "Email" , error: errorInfoMessage, input: email.value} ;
+            form_errors.push(errorObj) ;
+           
+
+           
+        }
+else {
+email.setCustomValidity("") ;
+}
+
+
+   
+
+            if (regexError == true) {
+                email.style.backgroundColor = "red" ;
+                email.classList.add("InvalidCharacterFlash") ;
+                error.classList.add("error-message") ;
+                errorInfo.classList.add("error-message") ;
+
+                error.innerHTML = "Email Issue" ;
+
+            }
+            else {
+
+                email.classList.remove("InvalidCharacterFlash") ;
+
+                email.style.backgroundColor = "green" ;
+
+                error.classList.remove("error-message") ;
+                errorInfo.classList.remove("error-message") ;
+                
+                error.innerHTML = "" ;
+                errorInfo.innerHTML = "" ;
+
+            }
+
+
+        }
+
+        let comments  = document.getElementById("comments") ;
+comments.addEventListener("input",checkComments) ;    
+
+function checkComments() {
+let comments  = document.getElementById("comments") ;
+let maxLength = comments.getAttribute("maxLength") ;
+let error = document.getElementById("error") ;
+let errorInfo = document.getElementById("error-info") ; 
+
+
+if (comments.value.length > 30) {
+comments.style.backgroundColor = "rgb(20, 85, 38)" ;
+}
+
+if (comments.value.length > 40) {
+comments.style.backgroundColor = "blue" ;
+comments.style.color = "white" ;
+error.innerHTML = "Look out!"
+errorInfo.innerHTML = "You only have 18 characters left for comments!" ;
+error.classList.add("warning-message") ;
+errorInfo.classList.add("warning-message") ;
+}
+
+if (comments.value.length == 68) {
+error.classList.remove("warning-message") ;
+errorInfo.classList.remove("warning-message") ;
+error.innerHTML = "All set!"
+errorInfo.innerHTML = "Thats all the characters I can afford right now :) " ;
+error.classList.add("done-message") ;
+errorInfo.classList.add("done-message") ;
+}
+
+
+
+
+}
+
+let s = document.querySelector("main > form")
+s.addEventListener("submit",getFormErrors) ;
+function getFormErrors() {
+let formErrorsJSON = JSON.stringify(form_errors);
+let hiddenForm = document.getElementById("form-errors") ;
+/*
+let errorInput = document.createElement('input');   
+errorInput.type = 'hidden';
+errorInput.name = 'form-errors';
+hiddenForm.appendChild(errorInput);
+myForm.submit();
+*/
+hiddenForm.value = formErrorsJSON;
+
+
+}
+
+    </script>
+
+
+
+        
+
+            <br>
+            <details>
+                <summary>Why do you ask these questions?</summary>
+                <p>This is my main <em>first</em> foray into the world of web development. By answering these questions I can continue learning and improving.
+                Any and all honest feedback is <strong>very</strong> much appreciated</p>
+            </details>
+       
+
+        </main>
+
+        <footer>
+            <hr>
+        </footer>
+
+
+        
+    </body>
+
+</html>

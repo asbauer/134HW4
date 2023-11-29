@@ -1,0 +1,735 @@
+@import url(variables.css);
+
+
+
+@keyframes slideInLeft{
+    from {
+        transform: translateX(-500px);
+        
+    } 
+
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUpAbout {
+    from{
+        transform: translateY(500px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+    
+}
+
+
+
+.slide-up-about{
+    animation: slideUpAbout 2s ease-in 1 0s normal forwards;
+}
+
+
+.slide-in-left{
+    position: static;
+    animation: slideInLeft 2s ease-in 1 0s normal forwards;
+   
+}
+
+
+
+@keyframes slideUp{
+                from{
+                    transform:translateY(400px)
+                }
+
+                to{
+                    transform:translateY(0px) ;
+                   
+                }
+                
+            }
+
+            @keyframes slideDown {
+                from{
+                    transform: translateY(-200px);
+                }
+
+                to{
+                    transform: translateY(0px);
+                }
+                
+            }
+
+            @keyframes slideInRightHome {
+    from{
+        transform: translateX(700px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+    
+}
+
+
+
+            .slideUp{
+               
+                animation: slideUp 1s ease-in 1 0s normal forwards;
+
+            }
+
+            .slideDown{
+                animation: slideDown 1s ease-in 1 0s normal forwards;
+
+            }
+
+            .slideInRightHome{
+                animation: slideInRightHome 1s ease-in 1 0s normal forwards;
+
+            }
+        
+       
+       
+
+
+
+html{
+font-family: var(--custom-font),Arial, Helvetica, sans-serif;
+font-weight:900;
+font-size:1.2rem;
+background-color: var(--main-color,teal);
+width: 100vw;
+
+}
+
+
+
+body{
+    margin: 1px;
+   min-width:fit-content ;
+    
+}
+
+p{
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+
+
+
+@media only screen and (max-width: 480px ) {
+
+   *{
+    font-size: 1.1rem;
+   }
+ 
+
+  section h3{
+    position: relative;
+    right: -32%;
+   
+    }
+
+    #about>section>h2 , h2{
+            width: 99%;
+          
+            text-align: center;
+            position: static ;
+            border-bottom: 2px solid black;
+            
+            left: 32%;
+            bottom: -10px;
+            
+        }
+
+
+    figure{
+        width: 50vw;
+        margin-left: 25vw ;
+        text-align: center;
+        text-align: right;
+        float: right;
+        margin: 0;
+        border: 0;
+    }
+
+    figure>picture>img{
+        max-width: 95% ;
+        border: 2px rgb(125, 9, 9) solid;
+        border-top-color:rgb(125, 9, 9) ;
+        border-bottom-color: rgb(125, 9, 9);
+        border-left-color: green;
+        border-right-color:green;  
+    }
+    
+
+    /*
+                <img src="./images/romefull.jpg" width="50%dvw" height="50%dvh" alt="Photo of me at Vatican,Rome." title="Vatican,Rome.">
+*/
+ 
+/*
+#rome img{
+        width: 60vw;
+        max-width: 100%;
+        bottom:-5% ;
+        left: 3%;
+        float: inline-end;
+        margin: 3%;
+
+        
+    }
+*/
+
+    #rome>img{
+        border: 0px tan solid;
+        filter: contrast(1);
+        width: 60vw;
+        object-fit: contain;
+        object-position: bottom;
+        float: inline-end;
+        margin-top: 3%;
+        position: relative;
+       
+    }
+
+    h3{
+        text-decoration: underline;
+    }
+
+    
+
+    #fun-facts{
+        width: 25%;
+    }
+
+    figcaption{
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    #portfolio h2{
+        position:static ;
+        box-sizing: border-box;
+        border: none;
+        width: 98%;
+        text-decoration: underline;
+        font-weight: 900;
+
+    }
+
+   
+
+    
+}
+
+@media screen and (orientation:landscape) {
+    *{
+        font-size: 1.1rem ;
+    }
+    h2,h3{
+        position: static;
+        text-align: center;
+        border: 0;
+
+    }
+}
+
+
+
+
+a{
+display: inline;
+transition: transform 0.5s ease-in-out;
+}
+
+a:visited {
+color: rgb(2, 16, 1);
+text-decoration:underline ;
+}
+
+
+a:hover{
+color: rgb(97, 5, 147);
+transform:scale(2.0);
+}
+
+
+h1{
+    text-align: center;
+    display: block;
+    width: 100%;
+    background-color: brown;
+    font-family: var(--custom-font);
+    font-weight: 800;
+    text-align: center;
+    color: var(--header-color, white) ;
+    margin: 0 ;
+   
+    background-color: var(--welcome-border);
+
+
+}
+
+
+
+
+@media screen and (min-width:700px) {
+    h2{
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: underline;
+    width: 40%;
+    position: relative;
+    right: -18%;
+    bottom: -10px;
+}
+}
+
+@media screen and (min-width:701px) {
+    h2{
+    margin: 2px;
+    padding: 2px;
+    border: 2px solid black;
+    text-align: center;
+    
+    width: 30%;
+    position: relative;
+    right: -18%;
+    bottom: -10px;
+}
+}
+
+
+
+
+
+
+h3{
+    text-decoration: underline;
+    font-weight: bold ;
+    margin: 2px;
+    padding: 2px;
+    
+    text-align: center;
+    width: 23%;
+    position: relative;
+    right: -18%;
+    bottom: -10px;
+
+}
+
+
+main + section{
+    text-align: center;
+}
+
+
+/*
+a > h2{
+    border: 2px black solid;
+    width: 100%;
+    position: relative ;
+    left: auto;
+    text-align: center;
+    margin: 1%;
+    
+
+}
+*/
+
+
+ul{
+    list-style: none;
+    position: relative;
+   
+}
+
+
+
+
+
+@media screen and (min-width:481px) {
+    h2{
+        margin: 2px;
+        padding: 2px;
+        text-align: center;
+        text-decoration: underline;
+        width: 40%;
+        position: relative;
+        right: -18%;
+        bottom: -10px;
+    }
+
+
+#rome>img{
+    border: 0px tan solid;
+    filter: contrast(1);
+    width: 30vw;
+    object-fit: contain;
+    object-position: bottom;
+    float: inline-end;
+    margin: 3%;
+    position: relative;
+    top: -2vw;
+}
+figure{
+    width: 50vw;
+    margin-left: 25vw ;
+    text-align: center;
+    text-align: right;
+    float: right;
+    margin: 0;
+    border: 0;
+}
+
+
+figure>picture>img{
+    max-height: 80%;
+    
+    max-width: auto;
+    
+    margin-left: auto;
+    height: 100%;
+    width:100%;
+    border: 2px rgb(125, 9, 9) solid;
+    border-top-color:rgb(125, 9, 9) ;
+    border-bottom-color: rgb(125, 9, 9);
+    border-left-color: green;
+    border-right-color:green; 
+ 
+   
+    position: relative;
+    left: -5%;float: right;
+    
+    position:static;
+    right: -5%;
+    
+}
+
+figcaption{
+    position: static;
+    text-align: center;
+    width: 100%;
+}
+
+h2,h3,caption{
+    position: static;
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+}
+
+
+
+
+
+
+header{
+    width: 100dvw;
+    padding: 0;
+    margin: 0px;
+    line-height: 2; 
+}
+
+/*
+figure{
+    float: inline-end;
+    float: left;
+}
+*/
+
+
+details p{
+    border: 2px black solid;
+    margin: 0 1% 1% 1%;
+    width: 100%;
+    
+}
+
+
+/*
+details{
+    width: 60%;
+
+}
+*/
+
+
+summary:hover{
+    color: rgb(199, 177, 148) ;
+    cursor:pointer;
+}
+
+
+
+nav{
+    text-align: center;
+    padding: 1em ;
+    background-color: tan;
+    
+}
+
+
+/*
+
+figure>picture>img{
+    max-width: 95% ;
+    border: 2px rgb(125, 9, 9) solid;
+    border-top-color:rgb(125, 9, 9) ;
+    border-bottom-color: rgb(125, 9, 9);
+    border-left-color: green;
+    border-right-color:green;  
+}
+
+*/
+@media screen and (min-width:1189px) {
+
+    nav{
+        width: 100%;
+        text-align: center;
+        padding: 1em ;
+        background-color: tan;
+        
+    }
+
+    a{ display: inline-block;
+        transition: transform 0.5s ease-in-out;
+        }
+        
+        a:visited {
+        color: rgb(2, 16, 1);
+        text-decoration:underline ;
+        }
+        
+        
+        a:hover{
+        color: rgb(97, 5, 147);
+        transform:scale(1.1);
+        }
+
+        a > h2{
+            border: 2px black solid;
+            width: 100%;
+            position: relative ;
+            left: auto;
+            text-align: center;
+            margin: 1%;
+            
+        
+        }
+   
+    
+    #about h2{
+        margin: 2px;
+        padding: 2px;
+        border: 2px solid black;
+        text-align: center;
+        
+        width: 30%;
+        position: relative;
+        right: -16%;
+        bottom: -10px;
+    }
+
+    h3{
+        text-decoration: underline;
+        font-weight: bold ;
+        margin: 2px;
+        padding: 2px;
+        
+        text-align: center;
+        width: 23%;
+        position: relative;
+        right: -18%;
+        bottom: -10px;
+    
+    }
+    
+
+    figure{
+        height: 100vh;
+        width: 50vw;
+        position: relative;
+        float: inline-end;
+    }
+
+    #portfolio h2{
+        width: 100%;
+        position: static;
+        text-align: center;
+       
+        
+    }
+
+   /* #portfolio h2{
+        position:static ;
+        box-sizing: border-box;
+        border: none;
+        width: 98%;
+        text-decoration: underline;
+        font-weight: 900;
+
+    }
+*/
+    
+    
+
+    figure>picture>img{
+        max-height: 80%;
+       /*
+        max-width: auto;
+        */
+        margin-left: auto;
+        height: 100%;
+        width: 75%;
+        border: 2px rgb(125, 9, 9) solid;
+        border-top-color:rgb(125, 9, 9) ;
+        border-bottom-color: rgb(125, 9, 9);
+        border-left-color: green;
+        border-right-color:green;  
+       /*
+        position: relative;
+        left: -5%;float: right;
+        */
+        position:relative;
+        right: -5%;
+        
+        
+    }
+    
+/*
+    figure>picture>img{
+        max-width: 95% ;
+        border: 2px rgb(125, 9, 9) solid;
+        border-top-color:rgb(125, 9, 9) ;
+        border-bottom-color: rgb(125, 9, 9);
+        border-left-color: green;
+        border-right-color:green;  
+    }
+    */
+    
+    /*
+    figcaption{
+        text-align: center;
+        position: relative;
+        right: -10%;
+    }
+    */
+    figcaption{
+            text-align: center;
+            font-size: 0.8rem;
+        
+    }
+
+
+    #fun-facts{
+        margin: 1%;
+        position: relative;
+       text-align: right;
+       right: -1px;
+       
+    }
+
+    #courses-header,#activities {
+        position: relative;
+        right: -33%;
+    }
+    
+
+}
+
+caption{
+    margin: 2%;
+    text-decoration: underline;
+}
+
+
+
+ol,table,summary{
+    margin: 1%;
+}
+
+li{
+    
+    margin: 2%;
+}
+
+footer{
+    text-align: center;
+    color: rgb(92, 2, 2);
+    color:color(prophoto-rgb 1 0 0);
+    text-align: center;
+    margin-top: auto;
+
+}
+
+fieldset{
+    width: 90dvw;
+    text-align: center;
+}
+
+
+footer a, footer a:visited {
+    color: blue;
+    color:color-mix(in srgb, #34c9eb 100%, white);
+}
+
+.slideUp:has(h2){
+   & p{
+    color:color-mix(in srgb, brown 80%, rgb(3, 43, 43) 20%);
+   }
+}
+
+
+        
+.switch{
+    position: fixed;
+    top:10px ;
+    right: 10px ;
+    display: inline-block ;
+    height: 34px;
+}
+
+.switch input{
+    display: none;
+
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width:60px ;
+    height: 34px;
+    background-color: rgba(171, 121, 121, 0.673);
+    border-radius:34px ;
+
+}
+
+.slider:before {
+    position:absolute ;
+    content:"" ;
+    height: 26px; 
+    width: 26px;
+    left:4px ;
+    bottom:4px ;
+    background-color: white;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+
+}
+
+.no-js .switch{
+    display: none;
+}
+
