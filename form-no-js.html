@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Me</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Learn about the best way to get in touch with me">
+        <meta name="keywords" content="Adam,Bauer,computer,engineer,travel,UCSD">
+        <link rel="stylesheet" href="style.css" media="screen" type="text/css">
+        <meta name="viewport" content="width=device-width">
+
+        <style>
+
+            button{
+                transition: transform 0.5s ease-in-out;
+
+            }
+
+            button:hover{
+                transform:scale(1.1);
+            }
+
+            fieldset{
+                width: 50vw;
+                border: 2px  solid black;
+                text-align: center;
+            }
+            legend{
+                text-align: center;
+            }
+
+            input:focus, select:focus, input:hover, textarea:hover,select:hover{
+                background-color: rgb(99, 123, 168);
+                color: rgb(237, 233, 233);
+                border: 2px black solid;
+                transform:scale(1.1);
+
+               
+            }
+
+            input,select{
+            border: 2px black solid;
+            transition: transform 0.5s ease-in-out;
+
+            }
+
+
+            textarea{
+                border: 2px black solid;
+                transition: background-color 0.5s ;
+                transition: transform 0.5s ease-in-out;
+
+            }
+
+            textarea:hover::placeholder, input:hover::placeholder, textarea:focus, textarea:focus::placeholder{
+                background-color: rgb(99, 123, 168);
+                 color: rgb(237, 233, 233);
+                 
+               
+            }
+
+           
+            fieldset{
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            
+            input[type="reset"] {
+                box-sizing: border-box;
+                margin:0;
+                width: 35% ;
+                flex: 100%;
+            }
+            input[type="submit"] {
+             box-sizing: border-box;
+                margin:0;
+              width: 35% ;
+              flex: 100%;
+            }
+
+            div {
+                display: flex;
+                align-content: center;
+            }
+
+            input[type="input"], input[type="email"] {
+               width: 50%;
+               margin: auto;
+            }
+
+            fieldset > input[type="input"], fieldset > input[type="email"] {
+               display: flex;
+               align-content: center;
+            }
+
+            ::placeholder {
+                text-align: center;
+            }
+
+            
+
+           
+            :user-invalid{
+                background-color: rgb(129, 4, 4);
+                color: white;
+            
+            }
+
+            [type="text"]:valid, [type="email"]:user-valid {
+                background-color: green;
+                color: white;
+            }
+
+            
+          
+            
+            
+           
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>Let's Connect.</h1>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Me</a>
+                <a href="./portfolio.html">Portfolio</a>
+            </nav>
+        </header>
+       
+
+        
+        <main>
+            
+            <form action="https://httpbin.org/post"   method="POST">
+                <fieldset>
+                    <legend>Contact</legend>
+                   
+                    <label for="visitor-name">Please enter your name</label>
+                    <input type="text" id="visitor-name" name="visitor-name" placeholder="Your name" pattern="^[a-zA-Z\s]+$" required minlength="2">
+
+                   
+                    <label for="visitor-email">Please enter your email</label>
+
+                    <input type="email" id="visitor-email" name="visitor-email" placeholder="Your email" required minlength="5">
+                   
+                    <label for="comments">Enter any comments</label>
+                    <textarea name="comments" id="comments" placeholder="Please leave any comments here." required minlength="1" maxlength="68"></textarea>
+
+                    <div>
+                    <input type="reset">
+                    <input type="submit">
+                </div>
+                    
+
+                    
+
+                </fieldset>
+            </form>
+
+            <output class="error"></output>
+            <output class="error-info"></output>
+        
+
+            <br>
+            <details>
+                <summary>Why do you ask these questions?</summary>
+                <p>This is my main <em>first</em> foray into the world of web development. By answering these questions I can continue learning and improving.
+                Any and all honest feedback is <strong>very</strong> much appreciated</p>
+            </details>
+       
+
+        </main>
+
+        <footer>
+            <hr>
+        </footer>
+    </body>
+
+</html>
